@@ -1,0 +1,124 @@
+[gd_scene load_steps=20 format=3 uid="uid://dcpb81d1t55qc"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/level_scene.gd" id="1_1ykia"]
+[ext_resource type="Texture2D" uid="uid://bhcu6ag3b0jrv" path="res://Assets/Textures/texture_01.png" id="1_eopvo"]
+[ext_resource type="PackedScene" uid="uid://draoidsqq725s" path="res://Assets/Player/player.tscn" id="2_1pnx1"]
+[ext_resource type="PackedScene" uid="uid://cngsihou6ysf0" path="res://Assets/UI/ui.tscn" id="5_j60fc"]
+[ext_resource type="PackedScene" uid="uid://b1rucljvmkffl" path="res://Assets/Levels/platform_generator.tscn" id="8_nbnl2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1720a"]
+sky_top_color = Color(0.403179, 0.613818, 0.811747, 1)
+ground_bottom_color = Color(0.26187, 0.354083, 0.447606, 1)
+ground_horizon_color = Color(0.445359, 0.695613, 0.799697, 1)
+sun_angle_max = 0.0
+
+[sub_resource type="Sky" id="Sky_djda4"]
+sky_material = SubResource("ProceduralSkyMaterial_1720a")
+
+[sub_resource type="Environment" id="Environment_4qk0s"]
+background_mode = 2
+sky = SubResource("Sky_djda4")
+tonemap_mode = 2
+tonemap_exposure = 1.32
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ldbch"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_stmqa"]
+albedo_texture = ExtResource("1_eopvo")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_msg5t"]
+material = SubResource("StandardMaterial3D_stmqa")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aq12j"]
+size = Vector3(1.70752, 1.0152, 1.99917)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_diinv"]
+albedo_texture = ExtResource("1_eopvo")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_4ep3b"]
+lightmap_size_hint = Vector2i(14, 21)
+material = SubResource("StandardMaterial3D_diinv")
+size = Vector3(10, 1, 10)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qdj0s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbebs"]
+albedo_texture = ExtResource("1_eopvo")
+uv1_triplanar = true
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4x75r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dvyqq"]
+albedo_color = Color(0.841564, 0, 0.0678221, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fw7u1"]
+material = SubResource("StandardMaterial3D_dvyqq")
+
+[node name="Level" type="Node3D"]
+script = ExtResource("1_1ykia")
+
+[node name="UI" parent="." instance=ExtResource("5_j60fc")]
+layer = 0
+
+[node name="PlatformGenerator" parent="." instance=ExtResource("8_nbnl2")]
+
+[node name="Player" parent="." instance=ExtResource("2_1pnx1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.326543, -54.958)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4qk0s")
+
+[node name="Plane" type="StaticBody3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane"]
+shape = SubResource("BoxShape3D_ldbch")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Plane"]
+mesh = SubResource("BoxMesh_msg5t")
+
+[node name="StartPlane" type="StaticBody3D" parent="."]
+transform = Transform3D(0.0533031, 0, 0, 0, 0.582211, 0, 0, 0, 0.0410791, 0, 0, -54.847)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StartPlane"]
+transform = Transform3D(117.128, 0, 0, 0, 1, 0, 0, 0, 100, 0, -0.00674434, 0.150879)
+shape = SubResource("BoxShape3D_aq12j")
+
+[node name="Plane3D" type="MeshInstance3D" parent="StartPlane"]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
+mesh = SubResource("BoxMesh_4ep3b")
+skeleton = NodePath("../..")
+
+[node name="Teleport" type="Area3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 0.2, 0, 0, 0, 3, 0, 0, -43.7024)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Teleport"]
+mesh = SubResource("CylinderMesh_qdj0s")
+surface_material_override/0 = SubResource("StandardMaterial3D_hbebs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Teleport"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("CylinderShape3D_4x75r")
+
+[node name="Spawn1" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9753, 0.513379, -23.4748)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Spawn1"]
+mesh = SubResource("PlaneMesh_fw7u1")
+
+[node name="Spawn2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.047, 0.503228, -23.463)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Spawn2"]
+mesh = SubResource("PlaneMesh_fw7u1")
+
+[node name="Spawn3" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.513, -23.4741)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Spawn3"]
+mesh = SubResource("PlaneMesh_fw7u1")
+
+[connection signal="body_entered" from="Teleport" to="." method="_on_teleport_body_entered"]

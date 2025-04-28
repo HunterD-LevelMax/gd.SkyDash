@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7s4louvn7b47"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/platform.gd" id="1_cdeme"]
+[ext_resource type="Texture2D" uid="uid://m0xed4dwmc2w" path="res://Assets/Textures/texture_01.png" id="2_dagcu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1evbi"]
+albedo_texture = ExtResource("2_dagcu")
+emission_enabled = true
+emission = Color(0.132494, 0.133466, 0.133225, 1)
+emission_energy_multiplier = 0.35
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ksqsw"]
+material = SubResource("StandardMaterial3D_1evbi")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_omhtp"]
+size = Vector3(1.03699, 0.649628, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2bjy3"]
+size = Vector3(1.59248, 0.312531, 0.997955)
+
+[node name="StaticBody3D" type="StaticBody3D"]
+transform = Transform3D(3, 0, 0, 0, 0.5, 0, 0, 0, 3, 0, 0, 0)
+script = ExtResource("1_cdeme")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ksqsw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.11969, 0, 0, 0, 0.982092, 0, 0, 0, 1.0875, 0.0207072, 0.165755, 0)
+shape = SubResource("BoxShape3D_omhtp")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(-0.3969, 0, 0, 0, 1.11139, -8.75102e-08, 0, 9.71608e-08, 1.001, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.58044, 0, 0, 0, 1, 0, 0, 0, 1, 0.000711404, 0.493057, -0.00022889)
+shape = SubResource("BoxShape3D_2bjy3")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

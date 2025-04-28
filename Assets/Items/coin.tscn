@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt7c75kaggu0h"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/coin.gd" id="1_5wt20"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cjy2e"]
+metallic = 1.0
+metallic_specular = 0.54
+emission_enabled = true
+emission = Color(0.87415, 0.595586, 0, 1)
+emission_energy_multiplier = 1.33
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_twa3g"]
+material = SubResource("StandardMaterial3D_cjy2e")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_67ix6"]
+radius = 0.709516
+
+[node name="CoinArea" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.0930012, 0, 0, 0)
+script = ExtResource("1_5wt20")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_twa3g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.73816, 0, 0, 0)
+shape = SubResource("SphereShape3D_67ix6")

@@ -1,0 +1,82 @@
+[gd_scene load_steps=13 format=3 uid="uid://bghfspxk1ns23"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/menu.gd" id="1_6nk6q"]
+[ext_resource type="PackedScene" uid="uid://draoidsqq725s" path="res://Assets/Player/player.tscn" id="2_1bnhk"]
+[ext_resource type="Texture2D" uid="uid://bhcu6ag3b0jrv" path="res://Assets/Textures/texture_01.png" id="3_iyhrq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3423n"]
+
+[sub_resource type="Sky" id="Sky_i3p8v"]
+sky_material = SubResource("ProceduralSkyMaterial_3423n")
+
+[sub_resource type="Environment" id="Environment_0aufy"]
+background_mode = 2
+sky = SubResource("Sky_i3p8v")
+tonemap_mode = 3
+tonemap_exposure = 1.57
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp1h4"]
+albedo_texture = ExtResource("3_iyhrq")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_b8h01"]
+material = SubResource("StandardMaterial3D_kp1h4")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_miosh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r8s6g"]
+albedo_texture = ExtResource("3_iyhrq")
+uv1_triplanar = true
+
+[sub_resource type="TorusMesh" id="TorusMesh_abrn8"]
+material = SubResource("StandardMaterial3D_r8s6g")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0fwbd"]
+size = Vector3(1, 1, 1.02441)
+
+[node name="Menu" type="Node3D"]
+script = ExtResource("1_6nk6q")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0aufy")
+
+[node name="Player" parent="." instance=ExtResource("2_1bnhk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.105739, 0.5, -7.15949)
+
+[node name="Plane" type="StaticBody3D" parent="."]
+transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Plane"]
+mesh = SubResource("BoxMesh_b8h01")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane"]
+shape = SubResource("BoxShape3D_miosh")
+
+[node name="Start" type="StaticBody3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, 5.13618, 2.68478, -4.39483e-08)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Start"]
+mesh = SubResource("TorusMesh_abrn8")
+
+[node name="StartArea" type="Area3D" parent="Start"]
+transform = Transform3D(1.97175, 0, 0, 0, 1, 0, 0, 0, 1.95433, 0, 0, -0.0245038)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Start/StartArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0122071)
+shape = SubResource("BoxShape3D_0fwbd")
+
+[node name="Exit" type="StaticBody3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, -4.98269, 2.68478, -4.39483e-08)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Exit"]
+mesh = SubResource("TorusMesh_abrn8")
+
+[node name="ExitArea" type="Area3D" parent="Exit"]
+transform = Transform3D(1.97175, 0, 0, 0, 1, 0, 0, 0, 1.95433, 0, 0, -0.0245038)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Exit/ExitArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0122071)
+shape = SubResource("BoxShape3D_0fwbd")
+
+[connection signal="body_entered" from="Start/StartArea" to="." method="_on_start_area_body_entered"]
+[connection signal="body_entered" from="Exit/ExitArea" to="." method="_on_exit_area_body_entered"]
