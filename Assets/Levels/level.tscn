@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://dcpb81d1t55qc"]
+[gd_scene load_steps=21 format=3 uid="uid://dcpb81d1t55qc"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/level_scene.gd" id="1_1ykia"]
 [ext_resource type="Texture2D" uid="uid://bhcu6ag3b0jrv" path="res://Assets/Textures/texture_01.png" id="1_eopvo"]
 [ext_resource type="PackedScene" uid="uid://draoidsqq725s" path="res://Assets/Player/player.tscn" id="2_1pnx1"]
 [ext_resource type="PackedScene" uid="uid://cngsihou6ysf0" path="res://Assets/UI/ui.tscn" id="5_j60fc"]
+[ext_resource type="PackedScene" uid="uid://dk0d1u3nqvvr6" path="res://Assets/Levels/island.tscn" id="6_uhj1v"]
 [ext_resource type="PackedScene" uid="uid://b1rucljvmkffl" path="res://Assets/Levels/platform_generator.tscn" id="8_nbnl2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1720a"]
@@ -31,18 +32,6 @@ uv1_world_triplanar = true
 [sub_resource type="BoxMesh" id="BoxMesh_msg5t"]
 material = SubResource("StandardMaterial3D_stmqa")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_aq12j"]
-size = Vector3(1.70752, 1.0152, 1.99917)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_diinv"]
-albedo_texture = ExtResource("1_eopvo")
-uv1_triplanar = true
-
-[sub_resource type="BoxMesh" id="BoxMesh_4ep3b"]
-lightmap_size_hint = Vector2i(14, 21)
-material = SubResource("StandardMaterial3D_diinv")
-size = Vector3(10, 1, 10)
-
 [sub_resource type="CylinderMesh" id="CylinderMesh_qdj0s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbebs"]
@@ -57,6 +46,18 @@ albedo_color = Color(0.841564, 0, 0.0678221, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_fw7u1"]
 material = SubResource("StandardMaterial3D_dvyqq")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_aq12j"]
+size = Vector3(1.70752, 1.0152, 1.99917)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_luyio"]
+albedo_texture = ExtResource("1_eopvo")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_4ep3b"]
+lightmap_size_hint = Vector2i(14, 21)
+material = SubResource("StandardMaterial3D_luyio")
+size = Vector3(10, 1, 10)
+
 [node name="Level" type="Node3D"]
 script = ExtResource("1_1ykia")
 
@@ -66,7 +67,7 @@ layer = 0
 [node name="PlatformGenerator" parent="." instance=ExtResource("8_nbnl2")]
 
 [node name="Player" parent="." instance=ExtResource("2_1pnx1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.326543, -54.958)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.541217, -54.958)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4qk0s")
@@ -80,17 +81,8 @@ shape = SubResource("BoxShape3D_ldbch")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Plane"]
 mesh = SubResource("BoxMesh_msg5t")
 
-[node name="StartPlane" type="StaticBody3D" parent="."]
-transform = Transform3D(0.0533031, 0, 0, 0, 0.582211, 0, 0, 0, 0.0410791, 0, 0, -54.847)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StartPlane"]
-transform = Transform3D(117.128, 0, 0, 0, 1, 0, 0, 0, 100, 0, -0.00674434, 0.150879)
-shape = SubResource("BoxShape3D_aq12j")
-
-[node name="Plane3D" type="MeshInstance3D" parent="StartPlane"]
-transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
-mesh = SubResource("BoxMesh_4ep3b")
-skeleton = NodePath("../..")
+[node name="Island" parent="." instance=ExtResource("6_uhj1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -55)
 
 [node name="Teleport" type="Area3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 0.2, 0, 0, 0, 3, 0, 0, -43.7024)
@@ -120,5 +112,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.513, -23.4741)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawn3"]
 mesh = SubResource("PlaneMesh_fw7u1")
+
+[node name="StartPlane" type="StaticBody3D" parent="."]
+transform = Transform3D(0.0533031, 0, 0, 0, 0.582211, 0, 0, 0, 0.0410791, 0, 0, -74.4514)
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StartPlane"]
+transform = Transform3D(117.128, 0, 0, 0, 1, 0, 0, 0, 100, 0, -0.00674434, 0.150879)
+shape = SubResource("BoxShape3D_aq12j")
+
+[node name="Plane3D" type="MeshInstance3D" parent="StartPlane"]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
+mesh = SubResource("BoxMesh_4ep3b")
+skeleton = NodePath("../..")
 
 [connection signal="body_entered" from="Teleport" to="." method="_on_teleport_body_entered"]

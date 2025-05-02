@@ -124,7 +124,7 @@ bind/27/name = &"mixamorig_LeftHandIndex3"
 bind/27/bone = -1
 bind/27/pose = Transform3D(6.84311, 0.484356, -99.7644, 99.765, 0.304425, 6.84463, 0.33686, -99.9984, -0.462386, -0.0949208, -2.60994, 3.54995)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymukp"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fb4my"]
 albedo_texture = ExtResource("2_of1h7")
 
 [sub_resource type="Animation" id="Animation_obpsq"]
@@ -588,7 +588,7 @@ bones/32/scale = Vector3(1, 1, 1)
 [node name="human_man_warrior_001" type="MeshInstance3D" parent="Skin/Skeleton3D"]
 mesh = SubResource("ArrayMesh_jfgrm")
 skin = SubResource("Skin_8rxny")
-surface_material_override/0 = SubResource("StandardMaterial3D_ymukp")
+surface_material_override/0 = SubResource("StandardMaterial3D_fb4my")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Skin"]
 libraries = {
