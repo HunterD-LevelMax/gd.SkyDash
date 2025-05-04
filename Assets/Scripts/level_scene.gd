@@ -19,8 +19,8 @@ func _ready() -> void:
 	
 	# Создание кластерного пути
 	await platform_generator.spawn_clustered_path({
-		"layer_count": 50,
-		"cluster_size": 7,
+		"layer_count": 20,
+		"cluster_size": 5,
 		"horizontal_spacing": 6.0,
 		"vertical_spacing": 1.9,
 		"chaos": 0.5,
