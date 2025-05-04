@@ -1,11 +1,15 @@
 extends StaticBody3D
 
 signal add_coin
+signal platform_destroyed
 
-const COLOR_A = Color(0.6, 0.8, 1)    # Светло-голубой
-const COLOR_B = Color(1, 0.8, 0.6)    # Светло-оранжевый
+const SIZE_A = Vector3(1.2, 0.4, 1.9)
+const SIZE_B = Vector3(1.0, 0.4, 1.7)   
 
 var is_blinking = false
+var blink_time_total = 5.0  # Общее время пульсации
+var blink_timer = 0.0  # Текущее время
+var pulse_speed = 2.0  # Скорость пульсации (циклы в секунду)
 
 func _ready():
 	pass
@@ -13,27 +17,29 @@ func _ready():
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.name == "Player" and not is_blinking:
 		is_blinking = true
-		blink_and_destroy()
+		blink_timer = 0.0
+		set_process(true)  # Включаем обработку кадров
 
-func blink_and_destroy() -> void:
-	var blink_time := 5.0
-	var interval := 0.5
-	var t := 0.0
-	var color_toggle := false
+func _process(delta: float) -> void:
+	if is_blinking:
+		blink_timer += delta
+		
+		# Пульсация: интерполяция между SIZE_A и SIZE_B с использованием синусоиды
+		var pulse_factor = (sin(blink_timer * PI * pulse_speed) + 1) / 2  # Значение от 0 до 1
+		var target_size = SIZE_A.lerp(SIZE_B, pulse_factor)
+		scale = target_size
+		
+		# Проверка завершения времени пульсации
+		if blink_timer >= blink_time_total:
+			set_process(false)  # Отключаем обработку
+			emit_signal("platform_destroyed")  # Сигнал о разрушении
+			hide_platform()  # Скрываем платформу
 
-	while t < blink_time:
-		await get_tree().create_timer(interval).timeout
-		t += interval
-	
-	emit_signal("platform_destroyed")  # Сигнал о разрушении
-	
-	# Вместо queue_free(), скрываем платформу и возвращаем её в пул
-	hide_platform()
-	
 func hide_platform() -> void:
 	visible = false  # Скрываем платформу
-	is_blinking = false  # Сбрасываем состояние мигания
-	queue_free_parent()  # Убираем платформу из текущей сцены (не удаляем!)
+	is_blinking = false  # Сбрасываем состояние
+	scale = SIZE_A  # Сбрасываем масштаб до начального
+	queue_free_parent()  # Убираем платформу из сцены
 
 func queue_free_parent() -> void:
 	if get_parent():

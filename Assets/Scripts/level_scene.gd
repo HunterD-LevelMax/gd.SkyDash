@@ -21,7 +21,7 @@ func _ready() -> void:
 	await platform_generator.spawn_clustered_path({
 		"layer_count": 50,
 		"cluster_size": 7,
-		"horizontal_spacing": 7.0,
+		"horizontal_spacing": 6.0,
 		"vertical_spacing": 1.9,
 		"chaos": 0.5,
 		"difficulty": 1.1,
