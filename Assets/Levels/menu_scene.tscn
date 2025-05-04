@@ -41,7 +41,7 @@ script = ExtResource("1_6nk6q")
 environment = SubResource("Environment_0aufy")
 
 [node name="Player" parent="." instance=ExtResource("2_1bnhk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.105739, 0.5, -7.15949)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.502696, -5.34421)
 
 [node name="Plane" type="StaticBody3D" parent="."]
 transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 0, 0, 0)

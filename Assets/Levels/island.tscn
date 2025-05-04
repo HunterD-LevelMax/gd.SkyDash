@@ -93,7 +93,7 @@ transform = Transform3D(-1.23256, 0, -0.566242, 0, 0.999999, 0, 0.216195, 0, -0.
 transform = Transform3D(-0.0177021, 0, 0.777236, 0, 0.792184, 0, -0.840185, 0, -0.0163758, -4.48531, 0.500821, -2.30012)
 
 [node name="Bush_4_F_Color13" parent="Decorations" instance=ExtResource("5_irbad")]
-transform = Transform3D(0.457238, 0, 0.889345, 0, 1, 0, -0.889345, 0, 0.457238, -3.92736, 0.500821, -3.4936)
+transform = Transform3D(0.320603, 0, 0.809803, 0, 1, 0, -0.623586, 0, 0.416343, -3.60077, 0.500821, -3.4936)
 
 [node name="Rock_2_F_Color12" parent="Decorations" instance=ExtResource("12_ogt6m")]
 transform = Transform3D(0.0436525, 0, 0.207865, 0, 0.2, 0, -0.195178, 0, 0.0464899, 4.35558, 0.480557, 1.42177)
