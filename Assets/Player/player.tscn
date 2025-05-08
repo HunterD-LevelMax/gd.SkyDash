@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Assets/Player/player.gd" id="1_4ufsh"]
 [ext_resource type="Texture2D" uid="uid://b7xe5j4d180uf" path="res://Assets/Player/texture_man.png" id="2_of1h7"]
 [ext_resource type="AnimationLibrary" uid="uid://dfqtin3pwb3gt" path="res://Assets/Player/Animations/Jump.fbx" id="3_emq0m"]
+[ext_resource type="AnimationLibrary" uid="uid://bgsub3vj3cpx7" path="res://Assets/Bear/Animations/fall.fbx" id="3_fb5uj"]
 [ext_resource type="AnimationLibrary" uid="uid://001ptkiyupor" path="res://Assets/Player/Animations/Running.fbx" id="3_lwrsy"]
-[ext_resource type="AnimationLibrary" uid="uid://bsmw35o0vr3qp" path="res://Assets/Player/Animations/Falling Idle.fbx" id="3_v1ehw"]
 [ext_resource type="Script" path="res://Assets/Scripts/camera_spring_arm.gd" id="5_6l1ct"]
 [ext_resource type="Script" path="res://Assets/Scripts/camera_follow.gd" id="6_irep3"]
 
@@ -346,7 +346,7 @@ radius = 0.3
 script = ExtResource("1_4ufsh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.959491, 0.281739, 0, -0.281739, 0.959491, 0.0192826, 0.528496, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03653, 0.621026, 0)
 shape = SubResource("CapsuleShape3D_irfwq")
 
 [node name="Skin" type="Node3D" parent="."]
@@ -593,7 +593,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_fb4my")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Skin"]
 libraries = {
 "Global": SubResource("AnimationLibrary_i1tej"),
-"fall": ExtResource("3_v1ehw"),
+"fall": ExtResource("3_fb5uj"),
 "jump": ExtResource("3_emq0m"),
 "running": ExtResource("3_lwrsy")
 }

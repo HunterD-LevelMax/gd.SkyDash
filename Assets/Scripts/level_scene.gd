@@ -19,13 +19,15 @@ func _ready() -> void:
 	
 	# Создание кластерного пути
 	await platform_generator.spawn_clustered_path({
-		"layer_count": 20,
+		"layer_count": 10,
 		"cluster_size": 5,
-		"horizontal_spacing": 6.0,
+		"horizontal_spacing": 5.0,
 		"vertical_spacing": 1.9,
-		"chaos": 0.5,
-		"difficulty": 1.1,
-		"scale": Vector3(1.2, 0.4, 1.9)
+		"chaos": 0.6,
+		"difficulty": 1.2,
+		"scale": Vector3(1.0, 0.4, 1.5)
+		
+		# Vector3(1.2, 0.4, 1.9)
 	})
 	
 	# Создание платформы победы
@@ -45,11 +47,16 @@ func _on_coin_collected() -> void:
 func _on_win_platform_activated() -> void:
 	# Отображение диалога победы
 	print("Победа! Игрок достиг платформы победы.")
-	var dialog := ConfirmationDialog.new()
-	dialog.title = "Win"
-	dialog.dialog_text = "Good job!"
-	add_child(dialog)
-	dialog.popup_centered()
+	
+	player._dance_play()
+	
+	
+	
+#	var dialog := ConfirmationDialog.new()
+	#dialog.title = "Win"
+#	dialog.dialog_text = "Good job!"
+#	add_child(dialog)
+#	dialog.popup_centered()
 
 func _on_teleport_body_entered(body: Node3D) -> void:
 	# Телепортация игрока при входе в зону телепорта
