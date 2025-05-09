@@ -1,12 +1,12 @@
 [gd_scene load_steps=16 format=4 uid="uid://draoidsqq725s"]
 
-[ext_resource type="Script" path="res://Assets/Player/player.gd" id="1_4ufsh"]
+[ext_resource type="Script" uid="uid://mnoq7pufs4mb" path="res://Assets/Player/player.gd" id="1_4ufsh"]
 [ext_resource type="Texture2D" uid="uid://b7xe5j4d180uf" path="res://Assets/Player/texture_man.png" id="2_of1h7"]
 [ext_resource type="AnimationLibrary" uid="uid://dfqtin3pwb3gt" path="res://Assets/Player/Animations/Jump.fbx" id="3_emq0m"]
 [ext_resource type="AnimationLibrary" uid="uid://bgsub3vj3cpx7" path="res://Assets/Bear/Animations/fall.fbx" id="3_fb5uj"]
 [ext_resource type="AnimationLibrary" uid="uid://001ptkiyupor" path="res://Assets/Player/Animations/Running.fbx" id="3_lwrsy"]
-[ext_resource type="Script" path="res://Assets/Scripts/camera_spring_arm.gd" id="5_6l1ct"]
-[ext_resource type="Script" path="res://Assets/Scripts/camera_follow.gd" id="6_irep3"]
+[ext_resource type="Script" uid="uid://dyea6brfdde5m" path="res://Assets/Scripts/camera_spring_arm.gd" id="5_6l1ct"]
+[ext_resource type="Script" uid="uid://bn0agjkp13kyv" path="res://Assets/Scripts/camera_follow.gd" id="6_irep3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_irfwq"]
 radius = 0.215355
@@ -336,7 +336,7 @@ tracks/28/keys = PackedFloat32Array(0, 1, 0.356576, -0.362929, 0.365169, 0.77960
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i1tej"]
 _data = {
-"idle": SubResource("Animation_obpsq")
+&"idle": SubResource("Animation_obpsq")
 }
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ealra"]
@@ -592,10 +592,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_fb4my")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Skin"]
 libraries = {
-"Global": SubResource("AnimationLibrary_i1tej"),
-"fall": ExtResource("3_fb5uj"),
-"jump": ExtResource("3_emq0m"),
-"running": ExtResource("3_lwrsy")
+&"Global": SubResource("AnimationLibrary_i1tej"),
+&"fall": ExtResource("3_fb5uj"),
+&"jump": ExtResource("3_emq0m"),
+&"running": ExtResource("3_lwrsy")
 }
 autoplay = "Global/idle"
 

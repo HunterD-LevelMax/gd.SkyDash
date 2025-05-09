@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://8rm6h32psd0v"]
 
-[ext_resource type="Script" path="res://Assets/Scripts/standart_platform.gd" id="1_qdiki"]
+[ext_resource type="Script" uid="uid://cfufa86h3y8jg" path="res://Assets/Scripts/standart_platform.gd" id="1_qdiki"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hjwjk"]
 resource_name = "Blue"

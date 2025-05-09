@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c7s4louvn7b47"]
 
-[ext_resource type="Script" path="res://Assets/Scripts/platform.gd" id="1_cdeme"]
+[ext_resource type="Script" uid="uid://b14fqagflgqf8" path="res://Assets/Scripts/platform.gd" id="1_cdeme"]
 [ext_resource type="Texture2D" uid="uid://bhcu6ag3b0jrv" path="res://Assets/Textures/texture_01.png" id="2_dagcu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1evbi"]
