@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cv2xls4ciix4a" path="res://Assets/Scripts/menu.gd" id="1_6nk6q"]
 [ext_resource type="PackedScene" uid="uid://cngsihou6ysf0" path="res://Assets/UI/ui.tscn" id="2_c20vq"]
-[ext_resource type="PackedScene" uid="uid://72qdop1uc4fv" path="res://Assets/Characters/Man/player.tscn" id="3_54dqi"]
 [ext_resource type="Texture2D" uid="uid://bhcu6ag3b0jrv" path="res://Assets/Textures/texture_01.png" id="3_iyhrq"]
 [ext_resource type="PackedScene" uid="uid://bwrpbvqfoka0v" path="res://Assets/ForestModels/gltf/Bush_2_E_Color1.gltf" id="4_gicew"]
 [ext_resource type="PackedScene" uid="uid://beyckf1vsvel7" path="res://Assets/ForestModels/gltf/Tree_1_A_Color1.gltf" id="4_xnu48"]
@@ -60,6 +59,7 @@
 [ext_resource type="PackedScene" uid="uid://cs7ximyp36j76" path="res://Assets/ForestModels/gltf/Bush_3_A_Color1.gltf" id="57_ukykj"]
 [ext_resource type="PackedScene" uid="uid://4m12cn230b4f" path="res://Assets/ForestModels/gltf/Bush_1_F_Color1.gltf" id="58_kh6ob"]
 [ext_resource type="PackedScene" uid="uid://baby5bjkkj1pj" path="res://Assets/ForestModels/gltf/Bush_1_G_Color1.gltf" id="59_m5xrp"]
+[ext_resource type="PackedScene" uid="uid://ehpuvvgh2qb5" path="res://Assets/Player/player.tscn" id="60_c20vq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp1h4"]
 albedo_texture = ExtResource("3_iyhrq")
@@ -102,9 +102,6 @@ size = Vector3(0.381348, 4.06732, 22.9138)
 script = ExtResource("1_6nk6q")
 
 [node name="UI" parent="." instance=ExtResource("2_c20vq")]
-
-[node name="Player" parent="." instance=ExtResource("3_54dqi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.537644, -8.43223)
 
 [node name="Plane" type="StaticBody3D" parent="."]
 transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 0, 0, 0)
@@ -457,6 +454,9 @@ shape = SubResource("BoxShape3D_oxl8k")
 [node name="wall4" type="CollisionShape3D" parent="Wall"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.00447892, 2.19343, -14.7831)
 shape = SubResource("BoxShape3D_oxl8k")
+
+[node name="Player" parent="." instance=ExtResource("60_c20vq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.506529, -11.0459)
 
 [connection signal="body_entered" from="Start/StartArea" to="." method="_on_start_area_body_entered"]
 [connection signal="body_entered" from="Exit/ExitArea" to="." method="_on_exit_area_body_entered"]

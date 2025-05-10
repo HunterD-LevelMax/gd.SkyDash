@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://icw5xop5np2k" path="res://Assets/Scripts/level_scene.gd" id="1_1ykia"]
 [ext_resource type="Texture2D" uid="uid://bhcu6ag3b0jrv" path="res://Assets/Textures/texture_01.png" id="1_eopvo"]
 [ext_resource type="PackedScene" uid="uid://cngsihou6ysf0" path="res://Assets/UI/ui.tscn" id="5_j60fc"]
-[ext_resource type="PackedScene" uid="uid://draoidsqq725s" path="res://Assets/Characters/Gypsy/player.tscn" id="6_s6nh1"]
+[ext_resource type="PackedScene" uid="uid://ehpuvvgh2qb5" path="res://Assets/Player/player.tscn" id="6_s6nh1"]
 [ext_resource type="PackedScene" uid="uid://dk0d1u3nqvvr6" path="res://Assets/Levels/island.tscn" id="6_uhj1v"]
 [ext_resource type="PackedScene" uid="uid://b1rucljvmkffl" path="res://Assets/Levels/platform_generator.tscn" id="8_nbnl2"]
 
@@ -61,13 +61,19 @@ size = Vector3(10, 1, 10)
 [node name="Level" type="Node3D"]
 script = ExtResource("1_1ykia")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4qk0s")
+
 [node name="UI" parent="." instance=ExtResource("5_j60fc")]
 layer = 0
 
-[node name="PlatformGenerator" parent="." instance=ExtResource("8_nbnl2")]
+[node name="Player" parent="." instance=ExtResource("6_s6nh1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.529885, -56.2265)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_4qk0s")
+[node name="Island" parent="." instance=ExtResource("6_uhj1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -55)
+
+[node name="PlatformGenerator" parent="." instance=ExtResource("8_nbnl2")]
 
 [node name="Plane" type="StaticBody3D" parent="."]
 transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
@@ -77,9 +83,6 @@ shape = SubResource("BoxShape3D_ldbch")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Plane"]
 mesh = SubResource("BoxMesh_msg5t")
-
-[node name="Island" parent="." instance=ExtResource("6_uhj1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -55)
 
 [node name="Teleport" type="Area3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 0.2, 0, 0, 0, 3, 0, 0, -43.7024)
@@ -122,8 +125,5 @@ shape = SubResource("BoxShape3D_aq12j")
 transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
 mesh = SubResource("BoxMesh_4ep3b")
 skeleton = NodePath("../..")
-
-[node name="Player" parent="." instance=ExtResource("6_s6nh1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.89594, -1.23115)
 
 [connection signal="body_entered" from="Teleport" to="." method="_on_teleport_body_entered"]

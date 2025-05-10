@@ -13,7 +13,6 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node) -> void:
 	if body.name == "Player":
-		var player = body as CharacterBody3D
 		emit_signal("add_coin") 
 		# Удаляем бонус
 		queue_free()

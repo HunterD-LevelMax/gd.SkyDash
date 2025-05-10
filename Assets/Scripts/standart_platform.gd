@@ -1,6 +1,5 @@
 extends StaticBody3D
 
-signal add_coin
 signal platform_destroyed
 
 const SIZE_A = Vector3(1.2, 0.4, 1.9)

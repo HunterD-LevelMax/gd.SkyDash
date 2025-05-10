@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://ehpuvvgh2qb5"]
+
+[ext_resource type="Script" uid="uid://dyea6brfdde5m" path="res://Assets/Scripts/camera_spring_arm.gd" id="1_6miq6"]
+[ext_resource type="Script" uid="uid://phiaxgeuar3q" path="res://Assets/Player/player.gd" id="1_8ft5u"]
+[ext_resource type="Script" uid="uid://bn0agjkp13kyv" path="res://Assets/Scripts/camera_follow.gd" id="2_8ft5u"]
+[ext_resource type="PackedScene" uid="uid://cwpms7w7vjs3s" path="res://Assets/Characters/Bear/player_bear.tscn" id="5_rul8u"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8ft5u"]
+radius = 0.3
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kg0wl"]
+radius = 0.255568
+height = 1.34356
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_8ft5u")
+
+[node name="SpringArmPivot" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.07218, -0.0573955)
+script = ExtResource("1_6miq6")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="SpringArmPivot"]
+shape = SubResource("SphereShape3D_8ft5u")
+spring_length = 6.0
+
+[node name="SpringPosition" type="Node3D" parent="SpringArmPivot/SpringArm3D"]
+
+[node name="Camera" type="Camera3D" parent="SpringArmPivot" node_paths=PackedStringArray("spring_arm")]
+current = true
+fov = 70.0
+script = ExtResource("2_8ft5u")
+spring_arm = NodePath("../SpringArm3D/SpringPosition")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.674106, 0)
+shape = SubResource("CapsuleShape3D_kg0wl")
+
+[node name="Skin" parent="." instance=ExtResource("5_rul8u")]

@@ -122,7 +122,6 @@ func _spawn_platform(position: Vector3, scale: Vector3) -> Node:
 	platform_instance.position = position
 	platform_instance.scale = scale
 	platform_instance.visible = true
-	get_parent().add_child(platform_instance)
 	_active_platforms.append(platform_instance)
 	_last_platform_position = position
 

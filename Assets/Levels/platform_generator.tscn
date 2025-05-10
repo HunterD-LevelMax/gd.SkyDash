@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://sblt27tmbljv" path="res://Assets/Scripts/platform_generator.gd" id="1_rmyl0"]
 
-[node name="PlatformGenerator" type="Node"]
+[node name="PlatformGenerator" type="Node3D"]
 script = ExtResource("1_rmyl0")
