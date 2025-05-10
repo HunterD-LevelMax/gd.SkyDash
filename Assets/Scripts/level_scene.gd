@@ -20,14 +20,12 @@ func _ready() -> void:
 	# Создание кластерного пути
 	await platform_generator.spawn_clustered_path({
 		"layer_count": 10,
-		"cluster_size": 5,
-		"horizontal_spacing": 5.0,
+		"cluster_size": 6,
+		"horizontal_spacing": 6.0,
 		"vertical_spacing": 1.9,
-		"chaos": 0.6,
-		"difficulty": 1.2,
-		"scale": Vector3(1.0, 0.4, 1.5)
-		
-		# Vector3(1.2, 0.4, 1.9)
+		"chaos": 0.8,
+		"difficulty": 1.0,
+		"scale": Vector3(1.2, 0.4, 1.9)
 	})
 	
 	# Создание платформы победы
@@ -49,8 +47,6 @@ func _on_win_platform_activated() -> void:
 	print("Победа! Игрок достиг платформы победы.")
 	
 	player._dance_play()
-	
-	
 	
 #	var dialog := ConfirmationDialog.new()
 	#dialog.title = "Win"

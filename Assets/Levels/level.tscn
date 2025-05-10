@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://icw5xop5np2k" path="res://Assets/Scripts/level_scene.gd" id="1_1ykia"]
 [ext_resource type="Texture2D" uid="uid://bhcu6ag3b0jrv" path="res://Assets/Textures/texture_01.png" id="1_eopvo"]
 [ext_resource type="PackedScene" uid="uid://cngsihou6ysf0" path="res://Assets/UI/ui.tscn" id="5_j60fc"]
-[ext_resource type="PackedScene" uid="uid://cwpms7w7vjs3s" path="res://Assets/Bear/player2.tscn" id="6_d606v"]
+[ext_resource type="PackedScene" uid="uid://draoidsqq725s" path="res://Assets/Characters/Gypsy/player.tscn" id="6_s6nh1"]
 [ext_resource type="PackedScene" uid="uid://dk0d1u3nqvvr6" path="res://Assets/Levels/island.tscn" id="6_uhj1v"]
 [ext_resource type="PackedScene" uid="uid://b1rucljvmkffl" path="res://Assets/Levels/platform_generator.tscn" id="8_nbnl2"]
 
@@ -13,12 +13,12 @@ ground_bottom_color = Color(0.26187, 0.354083, 0.447606, 1)
 ground_horizon_color = Color(0.445359, 0.695613, 0.799697, 1)
 sun_angle_max = 0.0
 
-[sub_resource type="Sky" id="Sky_djda4"]
+[sub_resource type="Sky" id="Sky_s6nh1"]
 sky_material = SubResource("ProceduralSkyMaterial_1720a")
 
 [sub_resource type="Environment" id="Environment_4qk0s"]
 background_mode = 2
-sky = SubResource("Sky_djda4")
+sky = SubResource("Sky_s6nh1")
 tonemap_mode = 2
 tonemap_exposure = 1.32
 
@@ -60,9 +60,6 @@ size = Vector3(10, 1, 10)
 
 [node name="Level" type="Node3D"]
 script = ExtResource("1_1ykia")
-
-[node name="Player" parent="." instance=ExtResource("6_d606v")]
-transform = Transform3D(1, 0, 0.000331613, 0, 1, 0, -0.000331613, 0, 1, -0.0118756, 0.500856, -53.2402)
 
 [node name="UI" parent="." instance=ExtResource("5_j60fc")]
 layer = 0
@@ -125,5 +122,8 @@ shape = SubResource("BoxShape3D_aq12j")
 transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
 mesh = SubResource("BoxMesh_4ep3b")
 skeleton = NodePath("../..")
+
+[node name="Player" parent="." instance=ExtResource("6_s6nh1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.89594, -1.23115)
 
 [connection signal="body_entered" from="Teleport" to="." method="_on_teleport_body_entered"]
