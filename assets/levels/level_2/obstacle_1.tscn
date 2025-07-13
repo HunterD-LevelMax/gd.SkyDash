@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://dynm6j2v644l1"]
+
+[ext_resource type="PackedScene" uid="uid://ba1nqsnlcx8s1" path="res://assets/models/KayKit_Forest_Nature_Pack_1.0/Assets/gltf/Bush_2_C_Color1.gltf" id="1_0hqca"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0hqca"]
+size = Vector3(3.43188, 1.72057, 1.97678)
+
+[node name="Obstacle_1" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.786604, 0.00405884)
+shape = SubResource("BoxShape3D_0hqca")
+
+[node name="Bush_2_C_Color12" parent="StaticBody3D" instance=ExtResource("1_0hqca")]
+transform = Transform3D(1.04182, 0, 0, 0, 0.830387, 0, 0, 0, 1, 0.000160884, 0, 0)
+
+[node name="Bush_2_C_Color13" parent="StaticBody3D" instance=ExtResource("1_0hqca")]
+transform = Transform3D(1.04182, 0, 0, 0, 0.830387, 0, 0, 0, 1, 1.37219, 0, 0)
+
+[node name="Bush_2_C_Color14" parent="StaticBody3D" instance=ExtResource("1_0hqca")]
+transform = Transform3D(1.04182, 0, 0, 0, 0.830387, 0, 0, 0, 1, -1.38389, 0, 0)
+
+[node name="Bush_2_C_Color15" parent="StaticBody3D" instance=ExtResource("1_0hqca")]
+transform = Transform3D(0.652839, 0, 0, 0, 0.463632, 0, 0, 0, 1, -0.00133542, 1.06526, 0)
+
+[node name="Bush_2_C_Color16" parent="StaticBody3D" instance=ExtResource("1_0hqca")]
+transform = Transform3D(0.652839, 0, 0, 0, 0.463632, 0, 0, 0, 1, 0.858421, 1.06526, 0)
+
+[node name="Bush_2_C_Color17" parent="StaticBody3D" instance=ExtResource("1_0hqca")]
+transform = Transform3D(0.652839, 0, 0, 0, 0.463632, 0, 0, 0, 1, -0.868626, 1.06526, 0)

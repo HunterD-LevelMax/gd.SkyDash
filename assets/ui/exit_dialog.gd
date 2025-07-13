@@ -112,3 +112,9 @@ func open_dialog():
 	visible = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	set_initial_focus()
+
+func _on_touch_screen_button_confirm_pressed() -> void:
+	_on_confirm_pressed()
+	
+func _on_touch_screen_button_cancel_pressed() -> void:
+	_on_cancel_pressed()

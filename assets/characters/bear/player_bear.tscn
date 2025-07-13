@@ -1,10 +1,10 @@
 [gd_scene load_steps=14 format=4 uid="uid://bavxf8l8sbvkn"]
 
-[ext_resource type="AnimationLibrary" uid="uid://r0js0sn6ohp2" path="res://assets/characters/bear/Animations/fall.fbx" id="2_cghw4"]
-[ext_resource type="Texture2D" uid="uid://1l8y6jtgoo02" path="res://assets/characters/bear/Texture/High_Poly_baseColor.png" id="2_i4cns"]
-[ext_resource type="AnimationLibrary" uid="uid://d1f6nb50k6gwd" path="res://assets/characters/bear/Animations/jump.fbx" id="3_lecf7"]
-[ext_resource type="AnimationLibrary" uid="uid://b5mmxowvi60hs" path="res://assets/characters/bear/Animations/running.fbx" id="4_g0l8u"]
-[ext_resource type="AnimationLibrary" uid="uid://dn8lsvqw32qen" path="res://assets/characters/bear/Animations/samba_dancing.fbx" id="5_g1h6h"]
+[ext_resource type="AnimationLibrary" uid="uid://r0js0sn6ohp2" path="res://assets/characters/bear/animations/falling.fbx" id="2_cghw4"]
+[ext_resource type="Texture2D" uid="uid://1l8y6jtgoo02" path="res://assets/characters/bear/texture/High_Poly_baseColor.png" id="2_i4cns"]
+[ext_resource type="AnimationLibrary" uid="uid://d1f6nb50k6gwd" path="res://assets/characters/bear/animations/jump.fbx" id="3_lecf7"]
+[ext_resource type="AnimationLibrary" uid="uid://b5mmxowvi60hs" path="res://assets/characters/bear/animations/running.fbx" id="4_g0l8u"]
+[ext_resource type="AnimationLibrary" uid="uid://dn8lsvqw32qen" path="res://assets/characters/bear/animations/dancing.fbx" id="5_g1h6h"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qaabp"]
 resource_name = "High_Poly"
@@ -637,10 +637,10 @@ skin = SubResource("Skin_ifbj1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
+&"dancing": ExtResource("5_g1h6h"),
 &"falling": ExtResource("2_cghw4"),
 &"idle": SubResource("AnimationLibrary_nlbjv"),
 &"jump": ExtResource("3_lecf7"),
-&"running": ExtResource("4_g0l8u"),
-&"samba_dancing": ExtResource("5_g1h6h")
+&"running": ExtResource("4_g0l8u")
 }
 autoplay = "idle/mixamo_com"

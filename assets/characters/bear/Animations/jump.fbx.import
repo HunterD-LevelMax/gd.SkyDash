@@ -4,12 +4,12 @@ importer="animation_library"
 importer_version=1
 type="AnimationLibrary"
 uid="uid://d1f6nb50k6gwd"
-path="res://.godot/imported/jump.fbx-282d5c66c1b2a247bbf953f524ed0c08.res"
+path="res://.godot/imported/jump.fbx-791ecb0e708fa25f9aeca3496726fe41.res"
 
 [deps]
 
-source_file="res://assets/characters/bear/Animations/jump.fbx"
-dest_files=["res://.godot/imported/jump.fbx-282d5c66c1b2a247bbf953f524ed0c08.res"]
+source_file="res://assets/characters/bear/animations/jump.fbx"
+dest_files=["res://.godot/imported/jump.fbx-791ecb0e708fa25f9aeca3496726fe41.res"]
 
 [params]
 

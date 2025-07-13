@@ -1,17 +1,23 @@
-[gd_scene load_steps=253 format=4 uid="uid://d2si7b53a2w26"]
+[gd_scene load_steps=262 format=4 uid="uid://d2si7b53a2w26"]
 
 [ext_resource type="Script" uid="uid://dhl8q6pjfb3gg" path="res://assets/menu/menu_scene.gd" id="1_vg1oy"]
+[ext_resource type="PackedScene" uid="uid://lvl7pu43mrfb" path="res://assets/scripts/music/background_player.tscn" id="2_pjmy2"]
 [ext_resource type="PackedScene" uid="uid://ehpuvvgh2qb5" path="res://assets/characters/player/player.tscn" id="2_qb64h"]
 [ext_resource type="Texture2D" uid="uid://w86ewl716skm" path="res://assets/models/KayKit_Forest_Nature_Pack_1.0/Assets/gltf/forest_texture.png" id="2_weset"]
 [ext_resource type="PackedScene" uid="uid://bv3lgyaw2nbnq" path="res://assets/ui/ui.tscn" id="4_j7lxe"]
-[ext_resource type="AudioStream" uid="uid://b5pf28pdjxc6q" path="res://assets/audio/Background/retro_adventure.ogg" id="6_sujgt"]
 [ext_resource type="PackedScene" uid="uid://btface6q5coic" path="res://assets/items/jump_bonus/Jump_bonus.tscn" id="8_g3fra"]
 [ext_resource type="PackedScene" uid="uid://b06cyiduybmae" path="res://assets/models/KayKit_Prototype_Bits_1.0/Assets/gltf/Door_B.gltf" id="9_jm0my"]
 [ext_resource type="PackedScene" uid="uid://d221h5yefqm5m" path="res://assets/models/KayKit_Prototype_Bits_1.0/Assets/gltf/Pallet_Small.gltf" id="10_qc6wb"]
 [ext_resource type="PackedScene" uid="uid://dqvu8pe7a4070" path="res://assets/models/KayKit_Prototype_Bits_1.0/Assets/gltf/target_wall_small.gltf" id="11_uly5u"]
 [ext_resource type="Texture2D" uid="uid://dq78j80iunbji" path="res://assets/models/KayKit_DungeonRemastered_1.1/Assets/gltf/dungeon_texture.png" id="12_m30cv"]
+[ext_resource type="PackedScene" uid="uid://kv7aj8qt71h2" path="res://assets/models/clouds/low_poly_cloud.glb" id="13_jm0my"]
+[ext_resource type="FontFile" uid="uid://igl3dj6061s1" path="res://assets/fonts/WaltoNeue-Regular.ttf" id="13_qc6wb"]
+[ext_resource type="PackedScene" uid="uid://dstjuhc5mit3g" path="res://assets/shaders/distortional.tscn" id="15_qg5yv"]
 [ext_resource type="Texture2D" uid="uid://d2af8pv7hsje3" path="res://assets/models/KayKit_Prototype_Bits_1.0/Assets/gltf/prototypebits_texture.png" id="16_gajwr"]
+[ext_resource type="PackedScene" uid="uid://bavxf8l8sbvkn" path="res://assets/characters/bear/player_bear.tscn" id="16_pjmy2"]
 [ext_resource type="PackedScene" uid="uid://cxe3fv8y337hb" path="res://assets/sky/sky.tscn" id="17_o3lrt"]
+[ext_resource type="PackedScene" uid="uid://dbrddysqk2p7p" path="res://assets/characters/skeleton/skeleton.tscn" id="17_tvo8y"]
+[ext_resource type="PackedScene" uid="uid://cn28s3uphqb4c" path="res://assets/characters/man/man.tscn" id="18_k6dky"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_me1a6"]
 resource_name = "forest"
@@ -181,7 +187,7 @@ shadow_mesh = SubResource("ArrayMesh_i708g")
 points = PackedVector3Array(-3.57628e-07, 0, -0.100028, 0.129992, 0.129914, -0.15, 1.59984, 0, -0.100028, -3.57628e-07, 0, 0.0999657, -3.57628e-07, 2.8, -0.100028, 1.46985, 0.129914, -0.15, 0.129992, 2.66981, -0.15, 1.59984, 0, 0.0999657, 1.59984, 2.8, -0.100028, 1.35223, 0, 0.199963, 0.129992, 0.129914, 0.14999, 0.17823, 0.999843, 0.385693, -3.57628e-07, 2.8, 0.0999657, 1.46985, 2.66981, -0.15, 1.42161, 0.999843, 0.385693, 1.40611, 0, 0.199963, 1.59984, 2.8, 0.0999657, 1.35223, 2.79973, 0.199963, 0.129992, 2.66981, 0.14999, 1.42819, 2.45548, 0.226286, 1.40611, 2.79973, 0.199963)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xpw0r"]
-size = Vector3(128.157, 1, 127.953)
+size = Vector3(154.956, 1, 141.548)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dydrg"]
 resource_name = "texture"
@@ -2503,16 +2509,61 @@ shadow_mesh = SubResource("ArrayMesh_penrf")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_l0cbr"]
 points = PackedVector3Array(1.72453, 1.35712, 0.262704, 1.72453, 0.593698, 0.262704, 1.65718, 1.35712, -0.214766, 1.62758, 1.54303, -0.201957, 1.69256, 1.54303, 0.25879, 1.54424, 1.35712, 0.709932, 1.69256, 0.408107, 0.25879, 1.62758, 0.408107, -0.201957, 1.65718, 0.593698, -0.214766, 1.54424, 0.593698, 0.709932, 1.26257, 0.0965204, 1.29378, 1.3602, 1.35712, -0.594749, 1.17004, 1.99972, -0.349254, 1.36769, 1.99972, -0.0962875, 1.34047, 1.54303, -0.568776, 1.42994, 1.95114, 0.226769, 1.30713, 1.95114, 0.531681, 1.51839, 1.54303, 0.690719, 1.14963, 0.838886, 1.3041, 1.19079, 0.3809, 1.37597, 1.25577, 0.379928, 1.29165, 1.42994, -1.61018e-07, 0.226769, 1.20848, -1.61018e-07, 1.27599, 1.38401, -1.61018e-07, -0.098778, 0.6761, -1.61018e-07, -1.17753, 1.34047, 0.408107, -0.568776, 1.3602, 0.593698, -0.594749, 1.19385, 0.0961965, 1.38202, 1.16698, -1.61018e-07, 1.33683, 0.743116, 0.240006, -1.2124, 0.446479, 0.413289, -1.46857, -0.226737, 2.92477, -0.980425, 0.0127499, 2.99991, 0.350229, -0.299875, 2.99991, -0.962991, -0.471326, 3.26809, -0.506157, 0.307686, 0.413289, -1.56961, -0.0321538, 0.413289, -1.76672, -0.317224, 2.92477, -1.03593, 0.030099, 2.92477, 0.423165, 1.04826, 1.95114, 0.734126, 1.15167, 1.54303, 0.977486, 1.13738, 0.885527, 1.29165, 0.774072, 0.302193, 1.762, 0.779175, 0.199519, 1.7741, 0.412461, -1.61018e-07, -1.36966, 0.73223, -1.61018e-07, 1.68017, -0.0396378, -1.61018e-07, -1.69912, -0.0270511, 0.240006, -1.77348, -0.454997, 3.26809, -0.235401, -0.563514, 3.3089, -0.202313, -1.30068, 2.99991, 0.662612, -1.0367, 3.3089, -0.497974, -0.677134, 3.3089, -0.520033, -0.583245, 3.3089, -0.525726, -1.31021, 1.42481, -1.02098, -1.63032, 2.92477, -0.723545, -1.28333, 2.92477, 0.735549, -0.680876, 0.949982, 1.86127, 0.582891, 0.905932, 1.56916, 0.645144, 0.905932, 1.54355, 0.584592, 0.848279, 1.59229, 0.425388, 0.199843, 1.81501, 0.469271, -1.61018e-07, 1.7097, -1.31021, 0.0748194, -1.02098, -1.32518, -1.61018e-07, -0.947336, -0.923084, 3.3089, -0.180254, -1.37348, 2.92477, 0.680046, -1.01697, 3.3089, -0.174561, -1.12889, 3.26809, -0.194486, -1.61297, 2.99991, -0.650608, -1.68611, 2.92477, -0.633174, -1.14556, 3.26809, -0.464886, -1.39866, 1.42481, -0.962635, -1.63032, 1.57477, -0.723545, -0.743469, 0.949982, 1.82818, -1.43267, 0.180085, 1.46919, -0.680876, 0.0498796, 1.86127, -0.695844, -1.61018e-07, 1.81324, -1.39866, 0.0748194, -0.962635, -1.70039, -1.61018e-07, 0.871816, -1.71774, 0.317092, 0.980688, -1.54799, 0.317092, 1.29841, -1.50343, 0.317092, 1.38166, -1.42757, 0.30608, 1.46634, -1.7504, 0.180085, 0.87324, -1.74564, 0.30608, 0.870749, -1.68611, 1.57477, -0.633174, -1.49901, -1.61018e-07, 1.24931, -1.43539, -1.61018e-07, 1.3685, -1.40342, -1.61018e-07, 1.42792, -0.743469, 0.0498796, 1.82818, -1.6708, 0.0748194, 0.359835)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_pjmy2"]
+size = Vector3(1.48409, 1.41956, 1.91705)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tvo8y"]
+size = Vector3(1.34741, 1.61804, 1.97864)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k6dky"]
+size = Vector3(1.36856, 1.53271, 1.8671)
+
 [node name="menu_scene" type="Node3D"]
 script = ExtResource("1_vg1oy")
 
-[node name="BackgroundAudio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_sujgt")
-volume_db = -5.0
-autoplay = true
+[node name="Sky" parent="." instance=ExtResource("17_o3lrt")]
+
+[node name="BackgroundPlayer" parent="." instance=ExtResource("2_pjmy2")]
+
+[node name="Title3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.9365, -31.2968)
+outline_modulate = Color(0.402396, 0.647592, 0.879562, 1)
+text = "SkyDash"
+font = ExtResource("13_qc6wb")
+font_size = 1757
+
+[node name="cloud_1" parent="Title3D" instance=ExtResource("13_jm0my")]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 0, 0, 1, -12.1998, 0.816028, 38.1671)
+
+[node name="cloud_2" parent="Title3D/cloud_1" instance=ExtResource("13_jm0my")]
+transform = Transform3D(0.717945, 0, 0.169218, 0, 0.855404, 0, -0.180802, 0, 0.671946, -35.1053, 5.6539, -3.8147e-06)
+
+[node name="cloud_3" parent="Title3D/cloud_1" instance=ExtResource("13_jm0my")]
+transform = Transform3D(0.129389, 0, -0.682261, 0, 0.855404, 0, 0.728967, 0, 0.121099, 26.9619, 8.72424, -36.0918)
+
+[node name="cloud_4" parent="Title3D/cloud_1" instance=ExtResource("13_jm0my")]
+transform = Transform3D(0.526198, 0, 0.00774026, 0, 0.625913, 0, 0.0436838, 0, 0.493808, 11.8364, 26.5194, 78.4674)
+
+[node name="cloud_5" parent="Title3D/cloud_1" instance=ExtResource("13_jm0my")]
+transform = Transform3D(0.0336943, 0, 0.398027, 0, 0.517005, 0, -0.424483, 0, 0.0726024, 87.5812, 32.0935, 27.7521)
+
+[node name="cloud_6" parent="Title3D/cloud_1" instance=ExtResource("13_jm0my")]
+transform = Transform3D(-0.465306, 0, -0.074588, 0, 0.535408, 0, 0.0935005, 0, -0.390143, 77.9309, 33.5372, 20.5625)
+
+[node name="cloud_7" parent="Title3D/cloud_1" instance=ExtResource("13_jm0my")]
+transform = Transform3D(-0.386483, 0, 0.367013, 0, 0.731716, 0, -0.423624, 0, -0.36848, 15.1812, 18.3152, 31.8042)
+
+[node name="cloud_8" parent="Title3D/cloud_1" instance=ExtResource("13_jm0my")]
+transform = Transform3D(-0.290614, 0, -0.637311, 0, 0.855404, 0, 0.680939, 0, -0.271994, -69.1723, 8.72424, -46.0628)
+
+[node name="cloud_9" parent="Title3D/cloud_1" instance=ExtResource("13_jm0my")]
+transform = Transform3D(-0.578228, 0, -0.432746, 0, 0.855405, 0, 0.46237, 0, -0.541181, 73.9142, -2.41074, 0.960614)
+
+[node name="cloud_10" parent="Title3D/cloud_1" instance=ExtResource("13_jm0my")]
+transform = Transform3D(-0.729838, 0, -0.0860783, 0, 0.664367, 0, 0.10871, 0, -0.577895, 28.5149, -2.41074, 5.84889)
 
 [node name="Player" parent="." instance=ExtResource("2_qb64h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18161, 0.00223398, -6.81133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18161, -0.0637435, -8.00455)
 
 [node name="Island" type="StaticBody3D" parent="."]
 transform = Transform3D(0.956768, 0, 0.290852, 0, 1, 0, -0.290852, 0, 0.956768, 0, 0, 0)
@@ -2532,52 +2583,53 @@ visible = false
 [node name="Exit_Label" type="Label3D" parent="."]
 transform = Transform3D(-0.720805, 0, 0.693138, 0, 1, 0, -0.693138, 0, -0.720805, -13.7267, 4.50162, 13.5582)
 pixel_size = 0.008
-text = "➤ ВЫХОД🚪 ИЗ МИРА ОСТРОВОВ 🏝️🏝️🏝️
-"
+text = "➤ EXIT🚪 FROM THE WORLD OF ISLANDS 🏝️🏝️🏝️"
 
 [node name="Wait_Label" type="Label3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.5245, 4.48392, 5.05325)
 pixel_size = 0.008
 text = "🌟 SKY DASH 🌟
-➤ В РАЗРАБОТКЕ... ЖДЕМ СТРОИТЕЛЕЙ
-"
-
-[node name="Record_Label" type="Label3D" parent="."]
-transform = Transform3D(-0.590056, 0, -0.807362, 0, 1, 0, 0.807362, 0, -0.590056, 15.2705, 4.67103, 0.185258)
-pixel_size = 0.008
-text = "🌟 МОЙ РЕКОРД 🌟
-"
-uppercase = true
+➤ IN DEVELOPMENT... WAITING FOR BUILDERS	"
 
 [node name="Coins_Label" type="Label3D" parent="."]
 transform = Transform3D(-0.77384, 0, -0.633381, 0, 1, 0, 0.633381, 0, -0.77384, 12.9978, 1.94447, 5.27073)
-text = "Мое сокровище!
-МОНЕТ: 0 🟡"
+text = "Gold Collected: 0 🟡"
 uppercase = true
 
 [node name="Rule_Label" type="Label3D" parent="."]
 transform = Transform3D(-0.147896, 0, -0.989003, 0, 1, 0, 0.989003, 0, -0.147896, 15.448, 3.42288, -7.1607)
 pixel_size = 0.008
 billboard = 1
+double_sided = false
 text = "🌟 SKY DASH 🌟
-🏝️ ПРАВИЛА МИРА ОСТРОВОВ:
+🏝️ RULES OF THE ISLAND WORLD:
 
-➤ ДОБЕРИТЕСЬ ДО КРАСНОЙ ПЛАТФОРМЫ
-➤ ПОСТАВЬ СВОЙ РЕКОРД ПО ВЫСОТЕ!
-➤ СОБИРАЙТЕ 🟡 ЗОЛОТЫЕ МОНЕТЫ
-➤ БОНУСЫ  🥫 +10 СЕКУНД СУПЕР-ПРЫЖКА!
+➤ REACH THE RED PLATFORM
+➤ SET YOUR HIGHEST ALTITUDE RECORD!
+➤ COLLECT 🟡 GOLD COINS
+➤ POWER-UPS 🥫 +10 SECONDS OF SUPER JUMP!
 
-⚙️ УПРАВЛЕНИЕ:
-[WASD] - ПЕРЕДВИЖЕНИЕ  
-[SPACE] - ПРЫЖОК  
-[SHIFT] - УСКОРЕНИЕ
-[TAB] - ВЫЗОВ КУРСОРА
-[R] - ПЕРЕЗАГРУЗКА УРОВНЯ  
+⚠️ Warning! Islands are unstable! Be careful!"
+uppercase = true
 
-⚠️ Острова нестабильны! Будьте осторожны!"
+[node name="Rule_Label2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6506, 4.42739, 1.98318)
+pixel_size = 0.008
+billboard = 1
+text = "🌟 SKY DASH 🌟
+🏝️ RULES OF THE ISLAND WORLD:
+
+➤ COLLECT 🟡 GOLD COINS AND  SET YOUR HIGHEST ALTITUDE RECORD!
+➤ POWER-UPS 🥫 +10 SECONDS OF SUPER JUMP!
+➤ AVOID OBSTACLES!!
+
+⚠️ Warning! Islands are unstable! Be careful!"
 
 [node name="Teleport_Level_1" type="StaticBody3D" parent="."]
 transform = Transform3D(0.591943, 0, 0.80598, 0, 1, 0, -0.80598, 0, 0.591943, 15.7452, -7.99919e-05, 0.520458)
+
+[node name="Distortional" parent="Teleport_Level_1" instance=ExtResource("15_qg5yv")]
+transform = Transform3D(-3.85149, 0, 0.00208914, 0, 4.53639, 0, -0.0460495, 0, -0.174731, 0, 1.22333, 0)
 
 [node name="Door_A_Decorated" type="MeshInstance3D" parent="Teleport_Level_1"]
 transform = Transform3D(0.56217, 0, 0.827021, 0, 1, 0, -0.827021, 0, 0.56217, 0.843159, 8.24682e-05, -0.517439)
@@ -2601,8 +2653,69 @@ shape = SubResource("ConcavePolygonShape3D_2gd5a")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000183105, 1.49515, 0)
 shape = SubResource("BoxShape3D_6bvlu")
 
+[node name="Record_Label_1" type="Label3D" parent="Teleport_Level_1"]
+transform = Transform3D(-0.999997, 0, -0.00233895, 0, 1, 0, 0.00233895, 0, -0.999997, -0.0108309, 4.67111, -0.581018)
+pixel_size = 0.008
+text = "🌟 My Record🌟
+"
+uppercase = true
+
+[node name="Title_Label_1" type="Label3D" parent="Teleport_Level_1"]
+transform = Transform3D(-0.999997, 0, -0.00233889, 0, 1, 0, 0.00233889, 0, -0.999997, -0.0108328, 3.60069, -0.58102)
+pixel_size = 0.008
+text = "🏝️ Doodle Sky 🏝️
+"
+font_size = 30
+uppercase = true
+
+[node name="Teleport_Level_2" type="StaticBody3D" parent="."]
+transform = Transform3D(0.349177, 0, -0.937057, 0, 1, 0, 0.937057, 0, 0.349177, -12.5321, -0.000159984, -3.11472)
+
+[node name="Distortional" parent="Teleport_Level_2" instance=ExtResource("15_qg5yv")]
+transform = Transform3D(-3.85149, 0, 0.00208914, 0, 4.53639, 0, -0.0460495, 0, -0.174731, 0, 1.22333, 0)
+
+[node name="Door_A_Decorated" type="MeshInstance3D" parent="Teleport_Level_2"]
+transform = Transform3D(0.56217, 0, 0.827021, 0, 1, 0, -0.827021, 0, 0.56217, 0.843159, 8.24682e-05, -0.517439)
+mesh = SubResource("ArrayMesh_gtdv8")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Teleport_Level_2"]
+transform = Transform3D(0.56217, 0, 0.827021, 0, 1, 0, -0.827021, 0, 0.56217, 0.843159, 8.24682e-05, -0.517439)
+shape = SubResource("ConvexPolygonShape3D_sujgt")
+
+[node name="Primitive_Doorway" type="MeshInstance3D" parent="Teleport_Level_2"]
+mesh = SubResource("ArrayMesh_vbgre")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Teleport_Level_2"]
+shape = SubResource("ConcavePolygonShape3D_2gd5a")
+
+[node name="StartArea3DLevel2" type="Area3D" parent="Teleport_Level_2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Teleport_Level_2/StartArea3DLevel2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000183105, 1.49515, 0)
+shape = SubResource("BoxShape3D_6bvlu")
+
+[node name="Record_Label_2" type="Label3D" parent="Teleport_Level_2"]
+transform = Transform3D(-0.999997, 0, -0.00233895, 0, 1, 0, 0.00233895, 0, -0.999997, -0.0108309, 4.67111, -0.581018)
+pixel_size = 0.008
+text = "🌟 MY RECORD 🌟
+"
+uppercase = true
+
+[node name="Title_Label_2" type="Label3D" parent="Teleport_Level_2"]
+transform = Transform3D(-0.999997, 0, -0.00233892, 0, 1, 0, 0.00233892, 0, -0.999997, -0.0108309, 3.64452, -0.581017)
+pixel_size = 0.008
+text = "🏝️ Squid Sky🏝️
+"
+font_size = 30
+uppercase = true
+
 [node name="TeleportExit" type="StaticBody3D" parent="."]
 transform = Transform3D(0.724942, 0, -0.68881, 0, 1, 0, 0.68881, 0, 0.724942, -14.2787, -7.99919e-05, 14.0368)
+
+[node name="Distortional" parent="TeleportExit" instance=ExtResource("15_qg5yv")]
+transform = Transform3D(-3.85149, 0, 0.00208914, 0, 4.53639, 0, -0.0460494, 0, -0.174731, 0, 1.22333, 0)
 
 [node name="Door_B" type="MeshInstance3D" parent="TeleportExit"]
 transform = Transform3D(0.512868, 0, 0.858468, 0, 1, 0, -0.858468, 0, 0.512868, 0.944229, 7.95379e-05, -0.559654)
@@ -2625,8 +2738,6 @@ shape = SubResource("ConcavePolygonShape3D_2gd5a")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TeleportExit/ExitArea3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000183105, 1.49515, 0)
 shape = SubResource("BoxShape3D_6bvlu")
-
-[node name="Sky" parent="." instance=ExtResource("17_o3lrt")]
 
 [node name="ResetArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -34.9055, 0)
@@ -2702,6 +2813,19 @@ shape = SubResource("ConvexPolygonShape3D_tvo8y")
 
 [node name="Decorations" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.24409, 0, 0)
+
+[node name="Tree_1_C_Color14" type="Node3D" parent="Decorations"]
+transform = Transform3D(-0.534057, 0, -0.845448, 0, 1, 0, 0.845448, 0, -0.534057, -15.0057, 0.023706, -8.28386)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Decorations/Tree_1_C_Color14"]
+
+[node name="Tree_1_C_Color1" type="MeshInstance3D" parent="Decorations/Tree_1_C_Color14/StaticBody3D"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.229044, 0, -0.362593)
+mesh = SubResource("ArrayMesh_und5v")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decorations/Tree_1_C_Color14/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_klmkh")
 
 [node name="Tree_1_C_Color13" type="Node3D" parent="Decorations"]
 transform = Transform3D(0.677916, 0, 0.735139, 0, 1, 0, -0.735139, 0, 0.677916, 18.1964, 0.0992177, -5.59217)
@@ -3015,6 +3139,18 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Decorations/Tree_Bare_1_B_Color13/Tree_Bare_1_B_Color1/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_pu25k")
 
+[node name="Tree_4_C_Color14" type="Node3D" parent="Decorations"]
+transform = Transform3D(-0.827663, 0, -0.322382, 0, 0.641962, 0, 0.358938, 0, -0.834843, -15.3453, -0.131038, -13.4448)
+
+[node name="Tree_4_C_Color1" type="MeshInstance3D" parent="Decorations/Tree_4_C_Color14"]
+mesh = SubResource("ArrayMesh_nfwwj")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Decorations/Tree_4_C_Color14/Tree_4_C_Color1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decorations/Tree_4_C_Color14/Tree_4_C_Color1/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_4kkjc")
+
 [node name="Tree_4_C_Color13" type="Node3D" parent="Decorations"]
 transform = Transform3D(-0.19271, 0, 0.88132, 0, 0.801225, 0, -0.981256, 0, -0.173084, 15.1389, -0.0454225, 5.96998)
 
@@ -3025,6 +3161,15 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="Decorations/Tree_4_C_Color13/Tree_4_C_Color1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Decorations/Tree_4_C_Color13/Tree_4_C_Color1/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_4kkjc")
+
+[node name="Tree_4_C_Color2" type="MeshInstance3D" parent="Decorations/Tree_4_C_Color13"]
+mesh = SubResource("ArrayMesh_nfwwj")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Decorations/Tree_4_C_Color13/Tree_4_C_Color2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decorations/Tree_4_C_Color13/Tree_4_C_Color2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_4kkjc")
 
 [node name="Bush_3_C_Color12" type="Node3D" parent="Decorations"]
@@ -3051,6 +3196,25 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Decorations/Bush_2_E_Color12/Bush_2_E_Color1/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_pqqmj")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decorations/Bush_2_E_Color12/Bush_2_E_Color1/StaticBody3D/CollisionShape3D"]
+shape = SubResource("ConcavePolygonShape3D_pqqmj")
+
+[node name="Bush_2_E_Color12" type="Node3D" parent="Decorations/Bush_2_E_Color12"]
+transform = Transform3D(0.831973, 0, 0.554815, 0, 1, 0, -0.554815, 0, 0.831973, -33.5969, 2.92768e-06, 6.73667)
+
+[node name="Bush_2_E_Color1" type="MeshInstance3D" parent="Decorations/Bush_2_E_Color12/Bush_2_E_Color12"]
+transform = Transform3D(0.57733, 0, -0.816511, 0, 1, 0, 0.816511, 0, 0.57733, 1.22261, 0, -0.904791)
+mesh = SubResource("ArrayMesh_fwhso")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Decorations/Bush_2_E_Color12/Bush_2_E_Color12/Bush_2_E_Color1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decorations/Bush_2_E_Color12/Bush_2_E_Color12/Bush_2_E_Color1/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_pqqmj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decorations/Bush_2_E_Color12/Bush_2_E_Color12/Bush_2_E_Color1/StaticBody3D/CollisionShape3D"]
+shape = SubResource("ConcavePolygonShape3D_pqqmj")
+
 [node name="Bush_2_C_Color12" type="Node3D" parent="Decorations"]
 transform = Transform3D(0.908052, 0.055926, 0.415106, -0.0508634, 0.998435, -0.0232517, -0.415757, 0, 0.909476, 20.4034, -0.165011, 6.2364)
 
@@ -3061,6 +3225,16 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="Decorations/Bush_2_C_Color12/Bush_2_C_Color1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Decorations/Bush_2_C_Color12/Bush_2_C_Color1/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_35gc6")
+
+[node name="Bush_2_C_Color1" type="MeshInstance3D" parent="Decorations/Bush_2_C_Color12/Bush_2_C_Color1"]
+transform = Transform3D(1, 1.43391e-10, 0, 8.89331e-09, 1, 6.6233e-09, 5.96046e-08, 1.15608e-08, 1, -29.0572, -2.03609, -23.8672)
+mesh = SubResource("ArrayMesh_xmjym")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Decorations/Bush_2_C_Color12/Bush_2_C_Color1/Bush_2_C_Color1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decorations/Bush_2_C_Color12/Bush_2_C_Color1/Bush_2_C_Color1/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_35gc6")
 
 [node name="Bush_1_D_Color12" type="Node3D" parent="Decorations"]
@@ -3271,6 +3445,16 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Decorations/Tree_1_B_Color1/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_8tq5b")
 
+[node name="Tree_1_B_Color1" type="MeshInstance3D" parent="Decorations/Tree_1_B_Color1"]
+transform = Transform3D(0.356836, 0, -0.934167, 0, 1, 0, 0.934167, 0, 0.356836, -34.7759, 0.189309, -4.87322)
+mesh = SubResource("ArrayMesh_lskjj")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Decorations/Tree_1_B_Color1/Tree_1_B_Color1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decorations/Tree_1_B_Color1/Tree_1_B_Color1/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_8tq5b")
+
 [node name="Tree_1_C_Color1" type="MeshInstance3D" parent="Decorations"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.6627, 0.114213, 1.35601)
 mesh = SubResource("ArrayMesh_und5v")
@@ -3396,7 +3580,63 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Decorations/box_stacked2/box_stacked/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_l0cbr")
 
+[node name="Tree_3_B_Color13" type="Node3D" parent="Decorations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3251, -0.215964, -12.7996)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Decorations/Tree_3_B_Color13"]
+
+[node name="Tree_3_B_Color1" type="MeshInstance3D" parent="Decorations/Tree_3_B_Color13/StaticBody3D"]
+mesh = SubResource("ArrayMesh_mqb3j")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decorations/Tree_3_B_Color13/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tvo8y")
+
+[node name="SkinBear" parent="." instance=ExtResource("16_pjmy2")]
+transform = Transform3D(0.221821, 0, 0.975087, 0, 1, 0, -0.975087, 0, 0.221821, -8.82717, 0.00350157, -9.85628)
+
+[node name="CostBear" type="Label3D" parent="SkinBear"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98093, 0)
+text = "Welcome to the world of islands!"
+
+[node name="AreaBear" type="Area3D" parent="SkinBear"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SkinBear/AreaBear"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0164862, 0.716632, 0.458521)
+shape = SubResource("BoxShape3D_pjmy2")
+
+[node name="SkinSkelet" parent="." instance=ExtResource("17_tvo8y")]
+transform = Transform3D(-0.730007, 0, -0.683439, 0, 1, 0, 0.683439, 0, -0.730007, 11.0281, 0.00290522, 9.32971)
+
+[node name="CostSkelet" type="Label3D" parent="SkinSkelet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11175, 0)
+text = "700 🟡"
+
+[node name="AreaSkelet" type="Area3D" parent="SkinSkelet"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SkinSkelet/AreaSkelet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00939941, 0.825629, 0.489319)
+shape = SubResource("BoxShape3D_tvo8y")
+
+[node name="SkinMan" parent="." instance=ExtResource("18_k6dky")]
+transform = Transform3D(0.419626, 0, 0.907697, 0, 1, 0, -0.907697, 0, 0.419626, -13.5046, 0.00609303, 3.01149)
+
+[node name="CostMan" type="Label3D" parent="SkinMan"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.03706, 0)
+text = "400 🟡"
+
+[node name="AreaMan" type="Area3D" parent="SkinMan"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.264613, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SkinMan/AreaMan"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0457611, 0.52613, 0.172565)
+shape = SubResource("BoxShape3D_k6dky")
+
 [connection signal="body_entered" from="Teleport_Level_1/StartArea3D" to="." method="_on_start_area_3d_body_entered"]
+[connection signal="body_entered" from="Teleport_Level_2/StartArea3DLevel2" to="." method="_on_start_area_3d_level_2_body_entered"]
 [connection signal="body_entered" from="TeleportExit/ExitArea3D" to="." method="_on_exit_area_3d_body_entered"]
 [connection signal="body_exited" from="TeleportExit/ExitArea3D" to="." method="_on_exit_area_3d_body_exited"]
 [connection signal="body_entered" from="ResetArea" to="." method="_on_reset_area_body_entered"]
+[connection signal="body_entered" from="SkinBear/AreaBear" to="." method="_on_area_bear_body_entered"]
+[connection signal="body_entered" from="SkinSkelet/AreaSkelet" to="." method="_on_area_skelet_body_entered"]
+[connection signal="body_entered" from="SkinMan/AreaMan" to="." method="_on_area_man_body_entered"]

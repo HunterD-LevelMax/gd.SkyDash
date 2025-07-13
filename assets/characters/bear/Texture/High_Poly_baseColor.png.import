@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1l8y6jtgoo02"
-path.s3tc="res://.godot/imported/High_Poly_baseColor.png-09a4cbee92477c860f6b4007469bd43b.s3tc.ctex"
-path.etc2="res://.godot/imported/High_Poly_baseColor.png-09a4cbee92477c860f6b4007469bd43b.etc2.ctex"
+path.s3tc="res://.godot/imported/High_Poly_baseColor.png-68070cd4d284d673c5ed5207efc31c45.s3tc.ctex"
+path.etc2="res://.godot/imported/High_Poly_baseColor.png-68070cd4d284d673c5ed5207efc31c45.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/characters/bear/Texture/High_Poly_baseColor.png"
-dest_files=["res://.godot/imported/High_Poly_baseColor.png-09a4cbee92477c860f6b4007469bd43b.s3tc.ctex", "res://.godot/imported/High_Poly_baseColor.png-09a4cbee92477c860f6b4007469bd43b.etc2.ctex"]
+source_file="res://assets/characters/bear/texture/High_Poly_baseColor.png"
+dest_files=["res://.godot/imported/High_Poly_baseColor.png-68070cd4d284d673c5ed5207efc31c45.s3tc.ctex", "res://.godot/imported/High_Poly_baseColor.png-68070cd4d284d673c5ed5207efc31c45.etc2.ctex"]
 
 [params]
 

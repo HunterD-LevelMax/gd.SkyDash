@@ -130,3 +130,12 @@ func open_dialog():
 func _show_title() -> void:
 	var score = Global.get_current_layer()
 	title.text = "🌟 МОЙ СЧЁТ! " + str(score) + " 🌟"
+
+func _on_touch_screen_button_menu_pressed() -> void:
+	_on_menu_pressed()
+
+func _on_touch_screen_button_restart_pressed() -> void:
+	_on_restart_pressed()
+
+func _on_touch_screen_button_cancel_pressed() -> void:
+	_on_cancel_pressed()

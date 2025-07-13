@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cs0lswoxn2oxj"]
+
+[ext_resource type="PackedScene" uid="uid://crpti40ymlrsm" path="res://assets/models/KayKit_Forest_Nature_Pack_1.0/Assets/gltf/Bush_1_B_Color1.gltf" id="1_qt5sn"]
+[ext_resource type="PackedScene" uid="uid://dchh0ney5yy08" path="res://assets/models/KayKit_Forest_Nature_Pack_1.0/Assets/gltf/Bush_1_D_Color1.gltf" id="2_mni74"]
+[ext_resource type="PackedScene" uid="uid://bmdjdoerdtvta" path="res://assets/models/KayKit_Forest_Nature_Pack_1.0/Assets/gltf/Bush_1_E_Color1.gltf" id="3_nkas4"]
+[ext_resource type="PackedScene" uid="uid://cd0e26giah5ds" path="res://assets/models/KayKit_Forest_Nature_Pack_1.0/Assets/gltf/Bush_2_A_Color1.gltf" id="4_mni74"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0hqca"]
+size = Vector3(4.15747, 1.53509, 1.97678)
+
+[node name="Obstacle_2" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.362794, 0.693868, 0.00405884)
+shape = SubResource("BoxShape3D_0hqca")
+
+[node name="Bush_1_B_Color12" parent="." instance=ExtResource("1_qt5sn")]
+transform = Transform3D(1.45383, 0, 0, 0, 1.60632, 0, 0, 0, 1.48461, -1.3347, 0.00151746, -0.057573)
+
+[node name="Bush_1_D_Color12" parent="." instance=ExtResource("2_mni74")]
+transform = Transform3D(1.11748, 0, 0, 0, 1.27554, 0, 0, 0, 1.06043, -0.16061, -0.00588958, -0.0109326)
+
+[node name="Bush_1_E_Color12" parent="." instance=ExtResource("3_nkas4")]
+transform = Transform3D(-1.44487, 0, 0.380628, 0, 1.60439, 0, -0.47902, 0, -1.14809, 1.28789, -0.0572868, -0.077417)
+
+[node name="Bush_2_A_Color12" parent="." instance=ExtResource("4_mni74")]
+transform = Transform3D(1.01701, 0, 0, 0, 1.06814, 0, 0, 0, 1.06043, -1.31961, 0.69154, -0.0513058)
+
+[node name="Bush_1_E_Color13" parent="." instance=ExtResource("3_nkas4")]
+transform = Transform3D(-0.945541, 0, -0.325502, 0, 1, 0, 0.325502, 0, -0.945541, 0.555643, 0.800264, -0.119753)

@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://b7o12h3rxxcsg"
-path="res://.godot/imported/trance_subuplifting.ogg-f1b9358f2c6a83d2679996a7f3ac8ad4.oggvorbisstr"
+path="res://.godot/imported/trance_subuplifting.ogg-de31e87068bfd5a21b9d03cb89353491.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/audio/Background/trance_subuplifting.ogg"
-dest_files=["res://.godot/imported/trance_subuplifting.ogg-f1b9358f2c6a83d2679996a7f3ac8ad4.oggvorbisstr"]
+source_file="res://assets/audio/background/trance_subuplifting.ogg"
+dest_files=["res://.godot/imported/trance_subuplifting.ogg-de31e87068bfd5a21b9d03cb89353491.oggvorbisstr"]
 
 [params]
 

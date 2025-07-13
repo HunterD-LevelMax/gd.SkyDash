@@ -1,0 +1,37 @@
+[gd_scene load_steps=9 format=3 uid="uid://dstjuhc5mit3g"]
+
+[ext_resource type="Shader" uid="uid://dhrrvxr2a0bvd" path="res://assets/shaders/distortion.gdshader" id="1_73rtg"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_73rtg"]
+height = 0.02
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_73rtg"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yi447"]
+noise = SubResource("FastNoiseLite_73rtg")
+
+[sub_resource type="Gradient" id="Gradient_33yma"]
+colors = PackedColorArray(0.288851, 0.682567, 0.92084, 1, 0.664586, 0.965754, 0.903078, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2nm7e"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_u018l"]
+color_ramp = SubResource("Gradient_33yma")
+noise = SubResource("FastNoiseLite_2nm7e")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_33yma"]
+render_priority = 0
+shader = ExtResource("1_73rtg")
+shader_parameter/albedo = Color(1, 1, 1, 0.603922)
+shader_parameter/texture_albedo = SubResource("NoiseTexture2D_u018l")
+shader_parameter/noise = SubResource("NoiseTexture2D_yi447")
+shader_parameter/distortion_intensity = 0.1
+shader_parameter/distortion_tiling = Vector2(2.34, 1.775)
+shader_parameter/distortion_offset_speed = Vector2(0.38, 0)
+
+[node name="Distortional" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_73rtg")
+surface_material_override/0 = SubResource("ShaderMaterial_33yma")

@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://b3dnotnr5ajpg"
-path="res://.godot/imported/pixel_dreams.ogg-c35639506c021f864180d841840b6e9d.oggvorbisstr"
+path="res://.godot/imported/pixel_dreams.ogg-28c49318c69b568b783e86758d45d6c7.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/audio/Background/pixel_dreams.ogg"
-dest_files=["res://.godot/imported/pixel_dreams.ogg-c35639506c021f864180d841840b6e9d.oggvorbisstr"]
+source_file="res://assets/audio/background/pixel_dreams.ogg"
+dest_files=["res://.godot/imported/pixel_dreams.ogg-28c49318c69b568b783e86758d45d6c7.oggvorbisstr"]
 
 [params]
 

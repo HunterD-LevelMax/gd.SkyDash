@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bfrem36f4beld"
-path="res://.godot/imported/pixel_love.ogg-cdfe22b50a44b305b6930f73de381856.oggvorbisstr"
+path="res://.godot/imported/pixel_love.ogg-6c770d849ae9ca876b586cba04d18ddf.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/audio/Background/pixel_love.ogg"
-dest_files=["res://.godot/imported/pixel_love.ogg-cdfe22b50a44b305b6930f73de381856.oggvorbisstr"]
+source_file="res://assets/audio/background/pixel_love.ogg"
+dest_files=["res://.godot/imported/pixel_love.ogg-6c770d849ae9ca876b586cba04d18ddf.oggvorbisstr"]
 
 [params]
 

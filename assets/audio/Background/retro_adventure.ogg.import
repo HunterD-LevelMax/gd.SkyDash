@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://b5pf28pdjxc6q"
-path="res://.godot/imported/retro_adventure.ogg-dccf86713358c7c3b93450f7eec32299.oggvorbisstr"
+path="res://.godot/imported/retro_adventure.ogg-d3002b7722da0665737695934ba418ec.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/audio/Background/retro_adventure.ogg"
-dest_files=["res://.godot/imported/retro_adventure.ogg-dccf86713358c7c3b93450f7eec32299.oggvorbisstr"]
+source_file="res://assets/audio/background/retro_adventure.ogg"
+dest_files=["res://.godot/imported/retro_adventure.ogg-d3002b7722da0665737695934ba418ec.oggvorbisstr"]
 
 [params]
 

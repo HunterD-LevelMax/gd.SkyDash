@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcwuvyawrpc01"]
+[gd_scene load_steps=6 format=3 uid="uid://dcwuvyawrpc01"]
 
 [ext_resource type="Script" uid="uid://dqpl324211lxs" path="res://assets/ui/win_dialog.gd" id="1_prba7"]
 
@@ -6,6 +6,10 @@
 default_font_size = 50
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_prba7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prba7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shoel"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_prba7")
@@ -52,18 +56,29 @@ alignment = 1
 
 [node name="Title" type="Label" parent="Control/MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
-text = "Победа!"
+text = "WIN!"
 horizontal_alignment = 1
 
 [node name="ButtonNext" type="Button" parent="Control/MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
-text = "Продолжить
-"
+text = "CONTINUE"
+
+[node name="TouchScreenButtonNext" type="TouchScreenButton" parent="Control/MarginContainer/Panel/VBoxContainer/ButtonNext"]
+position = Vector2(164, 38.5)
+scale = Vector2(16.48, 3.84)
+shape = SubResource("RectangleShape2D_prba7")
 
 [node name="ButtonMenu" type="Button" parent="Control/MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
-text = "Меню
+text = "MENU
 "
 
+[node name="TouchScreenButtonMenu" type="TouchScreenButton" parent="Control/MarginContainer/Panel/VBoxContainer/ButtonMenu"]
+position = Vector2(163, 38.5)
+scale = Vector2(16.64, 3.88)
+shape = SubResource("RectangleShape2D_shoel")
+
 [connection signal="pressed" from="Control/MarginContainer/Panel/VBoxContainer/ButtonNext" to="." method="_on_button_next_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/Panel/VBoxContainer/ButtonNext/TouchScreenButtonNext" to="." method="_on_touch_screen_button_next_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/Panel/VBoxContainer/ButtonMenu" to="." method="_on_button_menu_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/Panel/VBoxContainer/ButtonMenu/TouchScreenButtonMenu" to="." method="_on_touch_screen_button_menu_pressed"]

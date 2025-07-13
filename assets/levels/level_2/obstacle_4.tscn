@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://clj6ehx08qmpx"]
+
+[ext_resource type="PackedScene" uid="uid://vyrykiobdu3y" path="res://assets/models/KayKit_Prototype_Bits_1.0/Assets/gltf/Door_A_Decorated.gltf" id="1_jknep"]
+[ext_resource type="PackedScene" uid="uid://riq7cgfqxfc3" path="res://assets/models/KayKit_Prototype_Bits_1.0/Assets/gltf/Barrel_C.gltf" id="2_jmo5h"]
+[ext_resource type="PackedScene" uid="uid://c7wrhx762v0n" path="res://assets/models/KayKit_Prototype_Bits_1.0/Assets/gltf/Barrel_B.gltf" id="3_lqanf"]
+[ext_resource type="PackedScene" uid="uid://cuarw51wujn21" path="res://assets/models/KayKit_Prototype_Bits_1.0/Assets/gltf/Barrel_A.gltf" id="4_gjuxh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0hqca"]
+size = Vector3(3.43188, 1.38757, 1.97678)
+
+[node name="Obstacle_4" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.210571, 0.705616, -0.376205)
+shape = SubResource("BoxShape3D_0hqca")
+
+[node name="Door_A_Decorated2" parent="." instance=ExtResource("1_jknep")]
+transform = Transform3D(-4.37114e-08, -1, 0, 0.958188, -4.18837e-08, 0.28614, -0.28614, 1.25076e-08, 0.958188, 1.29127, 0, 0.497199)
+
+[node name="Barrel_C2" parent="." instance=ExtResource("2_jmo5h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.999747, 0.511646, -0.397727)
+
+[node name="Barrel_B2" parent="." instance=ExtResource("3_lqanf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42451, 0.4757, -0.380339)
+
+[node name="Barrel_A2" parent="." instance=ExtResource("4_gjuxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.183085, 0.537662, -0.407051)
+
+[node name="Door_A_Decorated3" parent="." instance=ExtResource("1_jknep")]
+transform = Transform3D(-4.37114e-08, -1, 0, 0.952709, -4.16442e-08, -0.303883, 0.303883, -1.32832e-08, 0.952709, 1.00775, 0, -1.29199)

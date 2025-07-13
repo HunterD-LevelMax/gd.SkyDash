@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dyueqvc6n3rfn"
-path="res://.godot/imported/euphoric_drive.ogg-f63682ca205520a0eb6b92b38cd93707.oggvorbisstr"
+path="res://.godot/imported/euphoric_drive.ogg-85f747bbc82050af7c82772f3c0f979e.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/audio/Background/euphoric_drive.ogg"
-dest_files=["res://.godot/imported/euphoric_drive.ogg-f63682ca205520a0eb6b92b38cd93707.oggvorbisstr"]
+source_file="res://assets/audio/background/euphoric_drive.ogg"
+dest_files=["res://.godot/imported/euphoric_drive.ogg-85f747bbc82050af7c82772f3c0f979e.oggvorbisstr"]
 
 [params]
 

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://lvl7pu43mrfb"]
+
+[ext_resource type="Script" uid="uid://db5by2vsj86ca" path="res://assets/scripts/music/background_music.gd" id="1_w5myy"]
+
+[node name="BackgroundPlayer" type="AudioStreamPlayer"]
+volume_db = -10.0
+script = ExtResource("1_w5myy")

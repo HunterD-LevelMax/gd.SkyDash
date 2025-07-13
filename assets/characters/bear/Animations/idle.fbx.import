@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bytjksodosc75"
-path="res://.godot/imported/idle.fbx-9c102af52b3f3d9ecc945dcf9cae9a19.scn"
+path="res://.godot/imported/idle.fbx-13e713f986cb81e024ff2d5c7a01c1f9.scn"
 
 [deps]
 
-source_file="res://assets/characters/bear/Animations/idle.fbx"
-dest_files=["res://.godot/imported/idle.fbx-9c102af52b3f3d9ecc945dcf9cae9a19.scn"]
+source_file="res://assets/characters/bear/animations/idle.fbx"
+dest_files=["res://.godot/imported/idle.fbx-13e713f986cb81e024ff2d5c7a01c1f9.scn"]
 
 [params]
 

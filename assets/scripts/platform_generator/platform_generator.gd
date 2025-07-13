@@ -80,7 +80,7 @@ func spawn_win_platform(callback: Callable) -> void:
 	# Создание платформы победы
 	var win_platform: Node = _win_platform_scene.instantiate()
 	# Спавним платформу победы в центре плоскости на высоте последней платформы + смещение
-	var win_platform_y: float = _last_platform_position.y + 1.9
+	var win_platform_y: float = _last_platform_position.y + 1.0
 	if win_platform_y < _plane_surface_y + 0.5:
 		win_platform_y = _plane_surface_y + 0.5
 	win_platform.position = Vector3(_plane_position.x, win_platform_y, _plane_position.z)

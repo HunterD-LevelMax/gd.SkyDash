@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjecvco7nd4tp"]
+[gd_scene load_steps=7 format=3 uid="uid://cjecvco7nd4tp"]
 
 [ext_resource type="Script" uid="uid://ck6p0j4o2crxq" path="res://assets/ui/exit_dialog.gd" id="1_qmujf"]
 
@@ -8,6 +8,11 @@ default_font_size = 50
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qmujf"]
 
 [sub_resource type="Theme" id="Theme_qmujf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmujf"]
+size = Vector2(21.78, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bfg35"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_qmujf")
@@ -52,7 +57,7 @@ alignment = 1
 
 [node name="Title" type="Label" parent="Control/MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
-text = "Вы уверены, что хотите выйти?"
+text = "Are you sure you want to exit?"
 horizontal_alignment = 1
 
 [node name="ButtonConfirm" type="Button" parent="Control/MarginContainer/Panel/VBoxContainer"]
@@ -60,12 +65,24 @@ layout_mode = 2
 focus_neighbor_top = NodePath(".")
 focus_neighbor_bottom = NodePath("../ButtonCancel")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "ДА"
+text = "YES"
+
+[node name="TouchScreenButtonConfirm" type="TouchScreenButton" parent="Control/MarginContainer/Panel/VBoxContainer/ButtonConfirm"]
+position = Vector2(402.5, 38.045)
+scale = Vector2(36.934, 3.831)
+shape = SubResource("RectangleShape2D_qmujf")
 
 [node name="ButtonCancel" type="Button" parent="Control/MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = " ОТМЕНА "
+text = "CANCEL"
+
+[node name="TouchScreenButtonCancel" type="TouchScreenButton" parent="Control/MarginContainer/Panel/VBoxContainer/ButtonCancel"]
+position = Vector2(402.5, 37.5)
+scale = Vector2(40.309, 3.869)
+shape = SubResource("RectangleShape2D_bfg35")
 
 [connection signal="pressed" from="Control/MarginContainer/Panel/VBoxContainer/ButtonConfirm" to="." method="_on_confirm_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/Panel/VBoxContainer/ButtonConfirm/TouchScreenButtonConfirm" to="." method="_on_touch_screen_button_confirm_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/Panel/VBoxContainer/ButtonCancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/Panel/VBoxContainer/ButtonCancel/TouchScreenButtonCancel" to="." method="_on_touch_screen_button_cancel_pressed"]

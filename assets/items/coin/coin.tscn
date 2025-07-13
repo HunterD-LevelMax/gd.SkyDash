@@ -11,6 +11,7 @@ script = ExtResource("1_253vv")
 
 [node name="CoinAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_btbq3")
+volume_db = -4.0
 
 [node name="CoinArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.616263, 0)

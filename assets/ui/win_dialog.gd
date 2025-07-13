@@ -119,4 +119,10 @@ func open_dialog():
 
 func _show_victory_text() -> void:
 	var score = Global.get_current_layer() if Global.has_method("get_current_layer") else 0
-	title.text = "🏆 ПОБЕДА! СЧЁТ: " + str(score) + " 🏆"
+	title.text = "🏆 VICTORY! SCORE: " + str(score) + " 🏆"
+
+func _on_touch_screen_button_next_pressed() -> void:
+	_on_button_next_pressed()
+	
+func _on_touch_screen_button_menu_pressed() -> void:
+	_on_button_menu_pressed()
